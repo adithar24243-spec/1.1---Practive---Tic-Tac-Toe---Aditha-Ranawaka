@@ -11,12 +11,13 @@ import random
 #--------------------------functions---------------------------
 
 def create_board():
-    board = [
-        ["_","_","_"]
-        ["_","_","_"]
-        ["_","_","_"]
-    ]
+    board = []
 
+    for i in range(3):
+        row = []
+        for j in range(3):
+            board.append = []
+    return board 
 
 #--------------------------main routine------------------------
 
