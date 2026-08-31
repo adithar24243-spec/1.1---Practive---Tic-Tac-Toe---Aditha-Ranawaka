@@ -39,17 +39,23 @@ def display_board(board):
             print("        " + str(i) + " " + (row_string))
 
 def main():
-    board = create_board
-    current_player = "X"
+    board = create_board()
 
-    print("Welcome to the Tic Tac Toe game")
-    print("Player 1 is X | Player 2 is O")
+    current_player = "X"
 
     while(True):
 
         display_board(board)
 
-        print("It is player 1's turn")
+        print("Welcome to the Tic Tac Toe game")
+        print("Player 1 is X | Player 2 is O")
+
+        if(current_player == "X"):
+            player_num = 1
+        else:
+            player_num = 2
+        
+        print(f"It is player {player_num}'s turn")
         col = int(input("Enter a column (0,1,2):"))
         row = int(input("Enter a row (0,1,2):"))
 
@@ -62,5 +68,5 @@ def main():
 
 #--------------------------main routine------------------------
 
-myboard = create_board()
-display_board(myboard)
+if (__name__ == "__main__"):
+    main()
