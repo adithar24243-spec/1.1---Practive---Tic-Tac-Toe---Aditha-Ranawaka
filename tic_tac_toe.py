@@ -11,10 +11,10 @@ import random
 #--------------------------functions---------------------------
 
 def create_board():
-    board = []
+    board = [] # create an empty list to store the board
 
     for i in range(3):
-        row = []
+        row = [] # create an empty list to store the rows
         for j in range(3):
             row.append("_")
         board.append(row)
@@ -40,6 +40,7 @@ def display_board(board):
 
 def main():
     board = create_board()
+    print("Welcome to the Tic Tac Toe game") # welcome message
 
     current_player = "X"
 
@@ -47,25 +48,32 @@ def main():
 
         display_board(board)
 
-        print("Welcome to the Tic Tac Toe game")
         print("Player 1 is X | Player 2 is O")
 
+        # this if and esle is responsible for the players' symbol (X or O)
         if(current_player == "X"):
             player_num = 1
         else:
             player_num = 2
         
         print(f"It is player {player_num}'s turn")
-        col = int(input("Enter a column (0,1,2):"))
-        row = int(input("Enter a row (0,1,2):"))
+        col = int(input("Enter a column (0,1,2):")) # input for the column number
+        row = int(input("Enter a row (0,1,2):")) # input for the row number
 
-        board[col][row] = current_player
+        if(board[col][row] == "_"):
+            board[col][row] = current_player # tracks the location of the coordination input
+            valid_move = True
 
-        if(current_player == "X"):
-            current_player = "O"
+            # this if and else condition switch the player's turn from one to another
+            if(current_player == "X"):
+                current_player = "O"
+            else:
+                current_player = "X"
+
         else:
-            current_player = "X"
+            print("This place is already taken. Enter another box.")
 
+        
 #--------------------------main routine------------------------
 
 if (__name__ == "__main__"):
